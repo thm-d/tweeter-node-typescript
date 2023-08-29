@@ -47,9 +47,11 @@ const tweetDelete = async (req, res, next) => {
         const tweetId = req.params.tweetId;
         await (0, tweets_queries_1.deleteTweet)(tweetId);
         const tweets = await (0, tweets_queries_1.getCurrentUserTweetsWithFollowing)(req.user);
-        res.render('tweets/tweet-list', {
+        res.render('tweets/tweet-refresh', {
             tweets,
+            isAuthenticated: req.isAuthenticated(),
             currentUser: req.user,
+            user: req.user,
             editable: true,
         });
     }

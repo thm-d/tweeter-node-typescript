@@ -1,1 +1,1 @@
-# tweeter-node
+# tweeter-node-typescript

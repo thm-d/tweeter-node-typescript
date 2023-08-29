@@ -33,7 +33,7 @@ const findUserPerUsername = (username) => {
 exports.findUserPerUsername = findUserPerUsername;
 const searchUsersPerUsername = (search) => {
     const regExp = `^${search}`;
-    const reg = new RegExp(regExp);
+    const reg = new RegExp(regExp, 'i');
     return user_model_1.User.find({ username: { $regex: reg } }).exec();
 };
 exports.searchUsersPerUsername = searchUsersPerUsername;
